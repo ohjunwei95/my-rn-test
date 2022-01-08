@@ -1,17 +1,17 @@
 import React, { useRef } from 'react';
-import { View, StyleSheet, Text, TextInput } from 'react-native';
-
+import { View, StyleSheet, Text } from 'react-native';
 import CustomTextInput from '@components/CustomTextInput';
 
 
 export default ContactForm = ({ contact, handleChange }) => {
 
-
     const refFirstName = useRef();
     const refLastName = useRef();
     const refEmail = useRef();
     const refPhone = useRef();
-    // onChangeText={(value) => onChangeText(name, value)}
+
+
+
     return (
         <View style={styles.container}>
 

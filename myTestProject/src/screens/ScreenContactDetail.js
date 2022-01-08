@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, StyleSheet, TouchableOpacity, Text, Alert } from 'react-native';
+import { View, ScrollView, StyleSheet, TouchableOpacity, Text } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import Avatar from '@components/Avatar';
 import ContactForm from '@components/ContactForm';
@@ -44,9 +44,7 @@ const ScreenContactDetail = ({  navigation }) => {
         }
     }, [headerBtnSave])
 
-
-
-
+    
     
 
 
