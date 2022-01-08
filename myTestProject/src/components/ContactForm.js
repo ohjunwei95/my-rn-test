@@ -57,13 +57,12 @@ export default ContactForm = ({ contact, handleChange }) => {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        width: '100%',
     },
     header: {
         fontWeight: 'bold',
         backgroundColor: 'rgba(211, 211, 211, 0.2)',
         fontSize: 20,
-        paddingHorizontal: 8,
+        paddingHorizontal: 15,
         paddingVertical: 3,
         color: 'black'
     }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, StyleSheet, Image } from 'react-native';
+import { StyleConstant } from '@assets/json/MyStyle';
 
 
 export default Avatar = ({ size = 10}) => {
@@ -13,6 +14,6 @@ export default Avatar = ({ size = 10}) => {
 
 const styles = StyleSheet.create({
     avatar: { 
-        backgroundColor: '#ff8c00',
+        backgroundColor: StyleConstant.orange,
     }
 });

@@ -4,9 +4,6 @@ import { View, StyleSheet, TextInput, Text } from 'react-native';
 
 export default CustomTextInput = ({ title, name, input, onChangeInput, inputRef, inputFocus }) => {
 
-    // const [input, setInput] = useState('');
-
-    
 
     return <View style={styles.inputContainer}>
         <Text style={styles.inputTitle}>{title}</Text>
@@ -29,6 +26,7 @@ const styles = StyleSheet.create({
         flex: 1,
         flexDirection: 'row',
         alignItems: 'center',
+        marginHorizontal: 15,
     },
     input: {
         flex: 1,
@@ -36,6 +34,8 @@ const styles = StyleSheet.create({
         height: 35,
         margin: 10,
         borderWidth: 1,
+        borderRadius: 5,
+        borderColor:  'rgba(211, 211, 211, 0.5)',
         padding: 10,
     },
     inputTitle: {
