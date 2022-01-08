@@ -34,20 +34,23 @@ const ScreenContact = ({ navigation }) => {
         setRefreshing(false);
     }
 
-    return <View style={styles.container}>
-        <NavigationEvents 
-              onWillFocus={()=>{ 
-                getContactList();
-              }}
+
+
+
+    return (
+        <View style={styles.container}>
+            <NavigationEvents 
+                onWillFocus={getContactList}
             />
-       <FlatList
-            data={contactArr}
-            renderItem={renderItem}
-            keyExtractor={item => item.id}
-            refreshing={refreshing} 
-            onRefresh={onRefresh}
-      />
-    </View>;
+            <FlatList
+                data={contactArr}
+                renderItem={renderItem}
+                keyExtractor={item => item.id}
+                refreshing={refreshing} 
+                onRefresh={onRefresh}
+            />
+        </View>
+    );
 }
 
 

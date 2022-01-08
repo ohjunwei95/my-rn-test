@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import { View, ScrollView, StyleSheet, TouchableOpacity, Text, Button } from 'react-native';
+import { View, ScrollView, StyleSheet, TouchableOpacity, Text, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage'
 import Avatar from '@components/Avatar';
 import ContactForm from '@components/ContactForm';
 import { StyleConstant } from '@assets/json/MyStyle';
-import ModelContact from '@models/ModelContact';
 
 
 const ScreenContactDetail = ({  navigation }) => {
@@ -18,13 +17,18 @@ const ScreenContactDetail = ({  navigation }) => {
     }
 
     const saveContact = async() => {
+
+        if(!contact.firstName) return  alert("first name cannot be empty");
+        if(!contact.lastName) return alert("last name cannot be empty")
+
+
         const stringifiedArray = await AsyncStorage.getItem('contact_list');
         const restoredArray = JSON.parse(stringifiedArray);
         const foundIndex = restoredArray.findIndex(x => x.id == contact.id);
         restoredArray[foundIndex] = contact;
         await AsyncStorage.setItem('contact_list', JSON.stringify(restoredArray));
         
-        navigation.navigate('Contact')
+        navigation.navigate('Contact');
     } 
 
     useEffect(() => {
@@ -39,15 +43,21 @@ const ScreenContactDetail = ({  navigation }) => {
             setHeaderBtnSave(false);
         }
     }, [headerBtnSave])
+
+
+
+
     
 
 
-    return <ScrollView style={styles.container}>
+    return (
+        <ScrollView style={styles.container}>
             <View style={styles.avatarContainer}>
                 <Avatar size={14} />
             </View>
             <ContactForm contact={contact} handleChange={onChangeValue} />
-        </ScrollView>;
+        </ScrollView>
+    );
 }
 
 
