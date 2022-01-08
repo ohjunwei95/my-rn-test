@@ -9,8 +9,13 @@ import ScreenContactDetail from "@screens/ScreenContactDetail";
 
 
 const mainFlow = createStackNavigator({
-  Contact: ScreenContact,
-  ContactDetail: ScreenContactDetail
+  Contact: {
+    screen: ScreenContact,
+    navigationOptions: ({ navigation }) => ({
+      headerTitleAlign: 'center',
+    })
+  },
+  ContactDetail: ScreenContactDetail,
 });
 
 const App = createAppContainer(mainFlow);

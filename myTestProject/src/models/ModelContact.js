@@ -3,21 +3,22 @@ import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import Avatar from '@components/Avatar';
 
 export default ModelContact = {
+
     Model: {
         id: '', firstName: '', lastName: '', email: '', phone: '',
     },
 
-    renderContactItem: (navigate = null, route = null) => {
+    renderContactItem: (nagivation, route) => {
         renderItem = ({ item }) => {
             return (
-                <TouchableOpacity onPress={()=> console.log("Pressed ")}>
+                <TouchableOpacity onPress={() => nagivation.navigate(route, { contactDetail: item })}>
                     <View style={styles.itemContainer}>
                         <Avatar size={6} />
                         <Text style={styles.itemText}>{`${item.firstName} ${item.lastName}`}</Text>
                     </View>
                 </TouchableOpacity>
             );
-        };
+        }
 
         return renderItem;
     }

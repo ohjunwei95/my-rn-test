@@ -1,7 +1,3 @@
-//loynote: 
-//jsconfig is for vscode's goto definition shortcut
-//use babel module resolver for import
-//ref: https://github.com/tleunen/babel-plugin-module-resolver/blob/master/DOCS.md
 {
     "compilerOptions": {
       "baseUrl": ".",
